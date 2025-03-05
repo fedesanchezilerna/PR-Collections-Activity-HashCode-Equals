@@ -1,5 +1,7 @@
 package playerEnum;
 
+import java.util.Objects;
+
 public class Player {
 
     // Attributes
@@ -30,7 +32,7 @@ public class Player {
         this.height = height;
         this.weight = weight;
         this.age = (age < INITIAL_AGE) ? INITIAL_AGE : age;
-        this.sex = DEFAULT_SEX;
+        this.sex = sex;
         this.points = Math.max(points, INITIAL_POINTS);
         this.team = team;
         this.position = position;
@@ -235,5 +237,20 @@ public class Player {
                 "PLAYER: %-11s %-11s %-10.2f %-10.2f %-10d %-11s %-10d %-10s %-11s %-10b %-10d",
                 name, surname, height, weight, age, sex, points, team, position, active, cards
         ).toUpperCase();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return Float.compare(height, player.height) == 0 &&
+               age == player.age &&
+               Objects.equals(name, player.name) &&
+               Objects.equals(surname, player.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, height, age);
     }
 }

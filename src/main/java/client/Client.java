@@ -1,5 +1,7 @@
 package client;
 
+import java.util.Objects;
+
 public class Client {
 
     // Atributos
@@ -168,4 +170,15 @@ public class Client {
                 accountNum, name, surname, nationality, phone, dni, age, debts, active);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return Objects.equals(accountNum, client.accountNum) && Objects.equals(dni, client.dni);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accountNum, dni);
+    }
 }
