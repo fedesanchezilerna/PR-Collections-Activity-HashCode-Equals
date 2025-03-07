@@ -1,4 +1,4 @@
-package playerEnum;
+package player;
 
 public enum Position {
     DEFENDER,

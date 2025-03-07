@@ -1,4 +1,4 @@
-package playerEnum;
+package player;
 
 public enum Team {
     FCB("Futbol Club Barcelona", "Spain"),

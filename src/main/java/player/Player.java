@@ -1,4 +1,4 @@
-package playerEnum;
+package player;
 
 import java.util.Objects;
 

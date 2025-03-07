@@ -1,7 +1,7 @@
-package playerEnum;
+package skin;
 
 public enum Sex {
     MAN,
     WOMAN,
-    NOTDEFINED;
+    NOT_DEFINED
 }

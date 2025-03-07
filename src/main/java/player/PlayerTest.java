@@ -1,4 +1,4 @@
-package playerEnum;
+package player;
 
 public class PlayerTest {
     public static void main(String[] args) {
